@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteiFy</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.css" integrity="sha256-Z12agm4mw1C2s2sXTx0wUlgmQdWqv1HCc/vgtpB0r9M=" crossorigin="anonymous" />
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="transp">
+      <a class="navbar-brand" href="#">NoteiFy</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://rajath-55.github.io./">Contact Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Options:
+            </a>
+            <div class="dropdown-menu black" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#notes">Add Note Below:</a>
+              <a class="dropdown-item" href="#notes">Delete Note</a>
+              <a class="dropdown-item" href="#notes">Or, edit an existing Note!</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" target="_blank" href="https://github.com/Rajath-55">Something Wrong? Tell us!</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" target="_blank" href="https://github.com/Rajath-55/NoteiFy">More to come soon!</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            id="searchNote"
+            placeholder="Find Notes"
+            aria-label="Search"
+          />
+          <a class="btn btn-dark my-2 my-sm-0" href="#hello"> 
+            Search
+           </a>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <h1 class="display-2">This is NoteiFy.</h1>
+      <hr class="dark" />
+      <h4 class="display-4">Note taking redefined.</h4>
+      <p class="lead">
+        All your notes in one place. That's it. Simple and efficient minimal
+        note-taking on the go.
+      </p>
+      <div class="jumbotron jumbo">
+        <h4 class="display-5">Add Your Notes:</h4>
+        <div class="form-group">
+          <!-- <label for="exampleFormControlTextarea1">Type them here:</label> -->
+          <div class="form-group">
+              <div class="row" id="titleGet">
+            <label for="title"><h5 class=display-5>Note Title</h5></label>
+            <input
+              type="email"
+              class="form-control"
+              id="title"
+              aria-describedby="emailHelp"
+              placeholder="Note Title goes here."
+            />
+            </div>
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your Note with anyone else.</small
+            >
+          </div>
+          <h5 class="display-5">Note text:</h5>
+          <textarea class="form-control" id="noteText" rows="3"></textarea>
+          <hr class="dark" />
+          <button class="btn btn-dark" href="#notes" id="noteAddition">Add New Note</button>
+          <p>
+
+          </p>
+          <a href="#notes" class="btn btn-danger" id="delete-all" onclick="deleteall()">Delete All notes</a>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="hello" >
+        
+        <div class="row" id="notes"></div>
+
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  </body>
+</html>

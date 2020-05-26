@@ -1,0 +1,168 @@
+/*--- Extra Bootstrap Column Padding --*/
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Muli:wght@500&family=Varela+Round&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+h1 h2 h3 h4 h5 p {
+    color:white !important;
+
+}
+small{
+    color:white !important;
+}
+body{
+    margin:0;
+    overflow-x: hidden;
+    /* color:white !important; */
+    
+    font-family:'Muli', sans-serif !important;
+    background:url("img/pen.jpg");
+    background-attachment: fixed;
+    background-size:cover;
+    
+}
+.black{
+    background:#b4b4b4 !important;
+}
+.rotate{
+    transform:rotateY(180deg);
+}
+.right{
+   float: right;
+   margin:2% 2%;
+}
+.dark{
+    color:black ;
+    background-color:black;
+    height:.04rem;
+}
+.dark1{
+    color:black ;
+    background-color:black;
+    height:.01rem;
+}
+
+.jumbo{
+    background-color:rgba(0,0,0,0.4) !important;
+    color:white !important;
+}
+#transp{
+    text-transform:uppercase;
+    font-weight:700;
+    font-size:.9rem;
+    letter-spacing: 0.1rem;
+    background-color: rgba(0,0,0,0.1) !important;
+
+}
+.navbar-brand{
+    height:2rem;
+    /* border: 2px solid black; */
+    color:#FFFFF0 !important;
+    font-weight: bolder !important;
+}
+.navbar-item{
+    padding-right:0.7rem;
+    color: #1ebba3 !important;
+}
+.navbar-light .navbar-nav .nav-link{
+    /* color:#FF00FF; !important; */
+    padding-top:0.8rem;
+}
+.nav-link.active, .nav-link:hover{
+    color:#1ebba3 !important;
+}
+.chang{
+    background:#e6df29 !important;
+}
+#emailHelp{
+    color:firebrick !important;
+}
+[class*="col-"] {
+    padding: 1rem;
+  }
+  
+  /*--- Bootstrap Mobile Gutter Fix --*/
+  .row, .container-fluid {
+  margin-left: 0px!important;
+  margin-right: 0px!important;
+  }
+  
+  /*--- Fix for Fixed Navbar jumping on scroll --*/
+  .fixed-top  {
+   -webkit-backface-visibility: hidden;
+  }
+  
+  /*--- Fixed Landing Page Section --*/
+  .landing {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: table;
+    z-index: -1;
+  }
+  .home-wrap {
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .home-inner {
+    position: fixed;
+    display: table;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /*--- iOS Fixed Background Image --*/
+  .fixed-background {
+    position: relative;
+    width: 100%;
+  }
+  .fixed-wrap {
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999!important;
+  }
+  .fixed {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform;
+  }
+  @media (max-width:768px){
+    body{
+        margin:0;
+        overflow-x: hidden;
+        /* color:white !important; */
+        
+        font-family:'Muli', sans-serif !important;
+        background:url("img/pen\ \(copy\).jpg");
+        background-attachment: fixed;
+        background-size:cover;
+        
+    }
+    h1{
+        font-size:4rem !important;
+    }
+  }
