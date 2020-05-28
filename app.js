@@ -56,7 +56,7 @@ function showNote() {
         
         <div class="card text-dark bg-dark mb-3 mx-4 my-2 chang"  style="max-width: 18rem; background:#e6df29 !important;">
         <div class="card-header" id="titleChange">${final}
-        <i class="fa fa-sticky-note right" id="book"></i>
+        <i class="fas fa-bookmark right" id="k" onclick="addBookMark(${index})"></i>
         </div>
         <div class="card-body" id="${index}">
         <hr class="dark1" />
@@ -73,7 +73,7 @@ function showNote() {
         
         <div class="card text-dark bg-dark mb-3 mx-4 my-2 chang "  style="max-width: 18rem; background:skyblue !important;">
         <div class="card-header">${final}
-        <i class="fa fa-sticky-note right" id="book"></i></div>
+        <i class="fas fa-bookmark right" id="k" onclick="addBookMark(${index})"></i></div>
         <div class="card-body" id="${index}">
         <hr class="dark1" />
           <p class="card-text">${element}</p>
@@ -188,4 +188,69 @@ function end(index) {
   notesList[index]=updated.value;
   localStorage.setItem("notes", JSON.stringify(notesList));
   showNote();
+}
+
+
+function addBookMark(index){
+  let titles = localStorage.getItem("titleGet");
+  
+  if (titles == null) {
+    titleList = [];
+  } else {
+    titleList = JSON.parse(titles);
+  }
+  let notes = localStorage.getItem("notes");
+  if (notes == null) {
+    notesList = [];
+  } else {
+    notesList = JSON.parse(notes);
+  }
+  let bookmarks = localStorage.getItem("bookMarks");
+  if (bookmarks == null){
+     bookmarksList = []
+  }else{
+    bookmarksList = JSON.parse(bookmarks);
+  }
+  let boolean = {}
+  for(i of notesList){
+    boolean[i] = 1;
+  }
+  for(i of bookmarksList){
+    boolean[i] = 0;
+  }
+  if(boolean[notesList[index]]==1){
+  bookmarksList.push(notesList[index]);
+  }
+  bookmarkstitleList = {};
+  for(let i=0; i<notesList.length;++i){
+    bookmarkstitleList[notesList[i]] = titleList[i];
+  }
+  console.log(bookmarkstitleList);
+  localStorage.setItem("bookMarks", JSON.stringify(bookmarksList));
+  let card = ``;
+  bookmarksList.forEach(function(element, index){
+    var Final = bookmarkstitleList[element];
+    card +=`<div class="card text-dark bg-dark mb-3 mx-4 my-2 chang"  style="max-width: 18rem; background:Firebrick !important;">
+    <div class="card-header" id="titleChange">${Final}
+    <i class="fa fa-sticky-note right" id="k"></i>
+    </div>
+    <div class="card-body" id="${index}">
+    <hr class="dark1" />
+      <p class="card-text">${element}</p>
+     <hr class="dark1" /> 
+    </div>
+    
+    </div>`
+  });
+  let bookmarkarea = document.getElementById("bookMarks");
+  bookmarkarea.innerHTML = card;
+
+  let deletebookmarks = document.getElementById("deletall");
+  deletebookmarks.addEventListener("click", function(e){
+   let bookmarkarea = document.getElementById("bookMarks");
+  bookmarkarea.innerHTML = "";
+  });
+
+  
+
 }
