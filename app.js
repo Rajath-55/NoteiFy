@@ -211,6 +211,7 @@ function addBookMark(index){
   }else{
     bookmarksList = JSON.parse(bookmarks);
   }
+  console.log(bookmarksList);
   let boolean = {}
   for(i of notesList){
     boolean[i] = 1;
@@ -254,3 +255,4 @@ function addBookMark(index){
   
 
 }
+
